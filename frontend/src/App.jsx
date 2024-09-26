@@ -22,7 +22,7 @@ function App() {
       <div className='px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]'>
         <ToastContainer
           position="top-right"
-          autoClose={2000}
+          autoClose={3500}
           hideProgressBar={false}
           newestOnTop={false}
           closeOnClick
