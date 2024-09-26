@@ -5,7 +5,14 @@ import { ShopContext } from '../context/ShopContext.jsx';
 
 function Navbar() {
 
-    const { showSearch, setShowSearch, getCartCount } = useContext(ShopContext);
+    const { showSearch, setShowSearch, getCartCount, token, setToken, setCartItems } = useContext(ShopContext);
+
+    const logout = () => {
+        navigate("/login");
+        localStorage.removeItem("token");
+        setToken("");
+        setCartItems({});
+    }
 
     const navigate = useNavigate();
 
@@ -55,17 +62,19 @@ function Navbar() {
                 />
 
                 <div className="group relative">
-                    <Link to='/login'>
-                        <img src={assets.profile_icon} className='w-5 cursor-pointer' alt="" />
-                    </Link>
+                    <img onClick={token ? null : navigate("/login")} src={assets.profile_icon} className='w-5 cursor-pointer' alt="" />
 
-                    <div className="hidden group-hover:block absolute dropdown-menu right-0 pt-4">
-                        <div className="flex flex-col gap-2 w-36 px-5 bg-slate-100 text-gray-500 rounded">
-                            <p className='cursor-pointer hover:text-black'>My Profile</p>
-                            <p className='cursor-pointer hover:text-black'>Orders</p>
-                            <p className='cursor-pointer hover:text-black'>Logout</p>
+                    {token && (
+                        <div className="hidden group-hover:block absolute dropdown-menu right-0 pt-4">
+                            <div className="flex flex-col gap-2 w-36 px-5 bg-slate-100 text-gray-500 rounded">
+                                <p className='cursor-pointer hover:text-black'>My Profile</p>
+                                <p onClick={() => navigate("/orders")} className='cursor-pointer hover:text-black'>Orders</p>
+                                <p className='cursor-pointer hover:text-black' onClick={logout}>Logout</p>
+                            </div>
                         </div>
-                    </div>
+                    )}
+
+
 
                 </div>
 
