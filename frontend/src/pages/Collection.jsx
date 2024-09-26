@@ -75,7 +75,7 @@ function Collection() {
       top: 0
     });
 
-  }, [category, subCategory, search, showSearch, sortType])
+  }, [category, subCategory, search, showSearch, sortType,products])
 
   return (
     <div className="flex flex-col sm:flex-row gap-5 sm:gap-10 pt-10 border-t">
