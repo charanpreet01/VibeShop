@@ -11,11 +11,12 @@ import PlaceOrder from './pages/PlaceOrder.jsx'
 import Orders from './pages/Orders.jsx'
 import Navbar from './components/Navbar.jsx'
 import Footer from './components/Footer.jsx'
-import Searchbar from './components/Searchbar.jsx'
+import SearchBarComp from './components/SearchBarComp.jsx'
 import ScrollToTop from './components/ScrollToTop.jsx'
 import { ToastContainer, toast } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css'
 import Verify from './pages/Verify.jsx'
+
 
 function App() {
   return (
@@ -36,7 +37,7 @@ function App() {
         />
         <ScrollToTop />
         <Navbar />
-        <Searchbar />
+        <SearchBarComp />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/collection' element={<Collection />} />
