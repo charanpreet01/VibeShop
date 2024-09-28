@@ -62,7 +62,12 @@ function Navbar() {
                 />
 
                 <div className="group relative">
-                    <img onClick={token ? null : navigate("/login")} src={assets.profile_icon} className='w-5 cursor-pointer' alt="" />
+                    <img
+                        onClick={() => token ? null : navigate("/login")}
+                        src={assets.profile_icon}
+                        className='w-5 cursor-pointer'
+                        alt=""
+                    />
 
                     {token && (
                         <div className="hidden group-hover:block absolute dropdown-menu right-0 pt-4">

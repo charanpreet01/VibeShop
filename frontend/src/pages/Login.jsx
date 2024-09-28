@@ -29,8 +29,6 @@ function Login() {
 
       } else {
         const response = await axios.post(backendUrl + "/api/user/login", { email, password });
-        console.log(email, password);
-        console.log(response.data);
 
         if (response.data.success) {
           
