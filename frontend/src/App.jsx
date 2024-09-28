@@ -21,7 +21,6 @@ function App() {
   return (
     <>
       <div className='px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]'>
-
         <ToastContainer
           position="top-right"
           autoClose={3500}
@@ -51,7 +50,6 @@ function App() {
           <Route path='/verify' element={<Verify />} />
         </Routes>
         <Footer />
-        
       </div>
     </>
   )
